@@ -1,2 +1,2 @@
 # Leetcode
-solution code for the leetcode problem is available here.
+Solution code for the leetcode problem is available here.
