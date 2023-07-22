@@ -1,0 +1,43 @@
+class Solution {
+public:
+    
+    bool maximum(vector<int> arr, int t)
+    {
+        int maxi = INT_MIN;
+        for(int i=0;i<arr.size();i++)
+        {
+            if(arr[i] > maxi)
+                maxi = arr[i];
+        }
+        
+        if(maxi <= t)
+            return true;
+        else
+            return false;
+    }
+    
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        
+        int n = candies.size();
+        vector<bool> ans;
+        
+        vector<int> vec(n);
+        for(int i=0;i<n;i++)
+        {
+            vec[i] = candies[i];
+        }
+        
+        for(int i=0;i<n;i++)
+        {
+            int temp = candies[i] + extraCandies;
+            bool fl = maximum(vec, temp);
+            
+            if(fl == true)
+                ans.push_back(true);
+            else
+                ans.push_back(false);
+        }
+        return ans;
+        
+    }
+};
